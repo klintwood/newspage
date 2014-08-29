@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css">	
+</head>
+<body>
+
+	<div id="search">
+		<input type="search" id="sucher" autofocus >
+		<input type="search" id="suchers" >
+	</div>
+	
+	<span id="time"></span>
+
+
+	<audio id="rain" loop preload autolay controls volume="0.0">
+		<source src="http://rainycafe.com/audio/rain.mp3" type="audio/mpeg">
+	</audio>
+
+	<ul id="bookmarks">
+		<li><a href="https://mail.google.com/mail/mu/mp/499/?mui=ca#tl/Inbox">GMail</a></li>
+		<li><a href="https://nihongomaster.com/login/">Nihongo Master</a></li>
+		<li><a href="http://www.nihongomaster.com/blog/">Blog</a></li>
+		<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Aq1J8HGXRJTmdG56QmtUQThMV1Bnc3RpRUg4M3VRQ0E&usp=drive_web#gid=0">PC</a></li>
+		<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Aq1J8HGXRJTmdFBTR0ZPUUFfbng5YzFjNmY4VUpGTVE&usp=drive_web#gid=0">ToDo</a></li>
+		<li><a href="https://docs.google.com/spreadsheets/d/1jy9Y3ThUtVTun6ke90BU8-AEle6ARzFM5YsCOZdf6HM/edit#gid=0">VR</a></li>
+		<li><a href="http://fuehrerschein.sueddeutsche.de/">Führerschein</a></li>
+		<li><a href="https://au.answers.yahoo.com/question/index?qid=20080611131324AAWPWn0">Engines</a></li>
+		<li><a href="https://www.google.com/events/io/io14videos">I/O 2014</a></li>
+	</ul>
+
+	<div id="news">
+		<div id="blur-container">
+			<div id="blur-bg"></div>
+			<ul id="hacker_news" class="newspage">
+			</ul>
+		</div>
+
+		<div id="blur-container">
+			<div id="blur-bg"></div>
+			<ul id="reddit" class="newspage">
+				<li>
+					Android
+					<ul id="android"></ul>
+					AndroidWear
+					<ul id="androidwear"></ul>
+					Oculus
+					<ul id="oculus"></ul>
+					PCGaming
+					<ul id="pcgaming"></ul>
+					GamingPC
+					<ul id="gamingpc"></ul>
+					PCMR
+					<ul id="pcmasterrace"></ul>
+					OnePlus
+					<ul id="oneplus"></ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="spielgrube"> <img src="images/earth.jpg"></div>
+	<div id="spielgrube"> <img src="images/earth.jpg"></div>
+	
+	<img id="mascot" src="images/miku.gif">
+
+</body>
+</html>
+<script src="jquery-2.1.1.js"></script>
+<script src="reddit.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript" src="http://api.ihackernews.com/page?format=jsonp&callback=yourFunction"></script>
+<!--
+todo:
+RSS
+reddit/4chan/hn/verge/ap feeds
+calendar
+notes
+more links
+integrate google music
+aix weather
+when certain keywords("reddit", "pcmr") are typed in, redirect instead of searching; if web address, just follow it; there must be a better way to imitate autocomplete.(log each URL input?)
+integrate all drive docs
+https://startpage.com/
+http://www.howtogeek.com/113513/5-alternative-search-engines-that-respect-your-privacy/
+http://searchengineland.com/scroogles-gone-heres-who-still-offers-private-searching-112275
+drag&drop for image search/upload to dropbox?
+fefe als newsquelle?
+Fake DoF with Mascot in foreground and blurry wallpaper in background?
+generate links from bookmarks
+dynamic wallpaper like muzei 
+order items like in g+
+mark all as read function
+Pin(Monitor) / Hide
+strike through hiddn items at first, to make undo easier?e
+Twitter feed?

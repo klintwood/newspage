@@ -1,0 +1,187 @@
+
+
+
+/* Search Box */
+#search {
+  width: 500px;
+  background-color: rgba(200, 200, 200, 0.7);
+  box-shadow: 0px 0px 10px black;
+
+  position: relative;
+  margin: 20px auto;
+}
+
+#search input {
+  background: none;
+  color: #111;
+  border: none;
+  outline-width: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Verdana;
+  padding: 5px;
+}
+
+/* Time */
+#time {
+  z-index: 5;
+  position: fixed; 
+  top: 10px;
+  right: 10px;
+
+  color: #eee;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+/* Newspages */
+ul.newspage {
+  width: 700px;
+  position: relative;
+  z-index: 101; 
+  padding: 20px;
+  margin: 20px auto;
+  display: inline-block; /* display lists next to each other */
+  
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 20px; 
+
+  background-color: rgba(255, 255, 255, 0.45); 
+  border-radius: 1px;
+  list-style-type: none;
+  box-shadow: 0px 0px 5px black; 
+}
+
+.newspage ul {
+  position: relative;
+  z-index: 101;
+}
+
+.newspage a {
+  text-decoration: none;
+  color: #111;
+}
+
+.newspage a:visited {
+  color: #444;
+}
+
+.newspage a:hover {
+
+  font-weight: bold;
+}
+
+#news {
+  width: 700px;
+  margin: auto;
+}
+
+/* Blur taken from http://jordanhollinger.com/2014/01/29/css-gaussian-blur-behind-a-translucent-box# */
+#blur-bg {
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+  filter: blur(7px);
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  filter: url('/media/blur.svg#blur'); /* for Firefox */
+}
+
+/* background image */
+body, #blur-bg {
+  background-image: url(images/transistor.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+#blur-container {
+  position: relative;
+  width: 740px;
+}
+
+
+/* Reddit specific */
+ul.newspage ul {
+  padding: 20px;
+  list-style-type: none;
+}
+
+/* Bookmarks */
+ul#bookmarks {
+    margin: 20px auto;
+    position: relative;
+    width: 800px;
+}
+
+#bookmarks a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Verdana;
+}
+
+#bookmarks li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+
+}
+
+/* experimental round buttons for future use */
+#spielgrube {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(200, 200, 200, 0.2); 
+  border-radius: 200px;
+  box-shadow: 0px 0px 10px black;
+  background-size: auto 100%;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 20px auto;
+  padding: 5px;
+  position: relative;
+
+  display: none;
+}
+
+div img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+/* Rain background sound is disabled for now */
+#rain {
+  display: none;
+}
+
+/* Mascot */
+#mascot {
+  z-index: 105;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  pointer-events: none;
+}
+
+span.remove_news {
+  cursor: pointer;
+}
+
+span.remove_news:hover {
+  font-weight: bold;
+}
+
+p {
+  line-height: 10px;
+}
