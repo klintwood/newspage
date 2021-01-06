@@ -135,7 +135,8 @@ function addSubreddit(subName) {
       hiddenItems = [];
     }
     
-    reddit.hot(subName).limit(30).fetch(function (res) {
+    // different limits for each subreddit might be useful. Additional function parameter?
+    reddit.hot(subName).limit(20).fetch(function (res) {
         // res contains JSON parsed response from Reddit    
         var posts = res.data.children;
 
@@ -159,14 +160,20 @@ function addSubreddit(subName) {
     
 }
 
-addSubreddit("android");
-addSubreddit("androidwear");
-addSubreddit("oculus");
-addSubreddit("pcgaming");
-addSubreddit("gamingpc");
-addSubreddit("pcmasterrace");
-addSubreddit("oneplus");
 
+
+addSubreddit("de");
+addSubreddit("worldnews");
+
+addSubreddit("virtualreality");
+addSubreddit("valveindex");
+addSubreddit("oculus");
+
+addSubreddit("classicwow");
+addSubreddit("evolveidle");
+
+addSubreddit("pcgaming");
+addSubreddit("hardware");
 
 
 function crop_title(title) {

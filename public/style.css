@@ -29,7 +29,7 @@
   top: 10px;
   right: 10px;
 
-  color: #eee;
+  color: #D7DADC;
   font-weight: bold;
   font-size: 16px;
   font-family: Arial;
@@ -48,10 +48,12 @@ ul.newspage {
   font-size: 16px;
   line-height: 20px; 
 
-  background-color: rgba(255, 255, 255, 0.45); 
+  background-color:#1A1A1B;/* rgba(255, 255, 255, 0.75); */
   border-radius: 1px;
   list-style-type: none;
   box-shadow: 0px 0px 5px black; 
+
+  color: #D7DADC; /* this should be the only font color needed, overwrites the ones for individual list items and the X */
 }
 
 .newspage ul {
@@ -61,7 +63,7 @@ ul.newspage {
 
 .newspage a {
   text-decoration: none;
-  color: #111;
+  color: #D7DADC;
 }
 
 .newspage a:visited {
@@ -113,6 +115,7 @@ body, #blur-bg {
 ul.newspage ul {
   padding: 20px;
   list-style-type: none;
+  color: #D7DADC;
 }
 
 /* Bookmarks */
@@ -124,10 +127,11 @@ ul#bookmarks {
 
 #bookmarks a {
   text-decoration: none;
-  color: #ddd;
+  color: #D7DADC;
   font-weight: bold;
   font-size: 16px;
   font-family: Verdana;
+  text-shadow:1px 1px 2px black;
 }
 
 #bookmarks li {
