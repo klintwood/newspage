@@ -2,8 +2,13 @@
 <html>
 <head>
 	<title>News</title>
-	<link rel="stylesheet" href="style.css">	
-	<link rel="icon" href="images/miku.gif">
+		
+	<link rel="icon" href="images/miku_icon.gif">
+
+	<!--link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"-->
+	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,23 +19,20 @@
 	
 	<span id="time"></span>
 
-
-	<audio id="rain" loop preload autolay controls volume="0.0">
-		<source src="http://rainycafe.com/audio/rain.mp3" type="audio/mpeg">
-	</audio>
-
 	<ul id="bookmarks">
 		<li><a href="https://mail.google.com/mail/u/0/#inbox">GMail</a></li>
 		<li><a href="https://lms.fh-wedel.de/course/view.php?id=1090">Cluedo</a></li>
 		<li><a href="https://docs.google.com/presentation/d/1LSK5K5VtoWkiDPx6TIshVpNe8RIOYqOyuAFxb-o0_CM/edit#slide=id.g34372776d9_0_16">Lebenslauf</a></li>
 		<li><a href="https://www.reddit.com/r/hermanmiller/comments/efsdyo/armrests_for_aeron_keep_sliding_down_over_time/">Armrest</a></li>
-		<li><a href="https://docs.google.com/spreadsheets/d/1SP11y21XwYAIRUa0mq3X58MP3F6KTJpsDNA2dFYYJvQ/edit#gid=1436892421">Evolve Sheet</a></li>
-		<li><a href="https://docs.google.com/spreadsheets/d/1WM1Z2fwhwr0rr2Pjpw6wk5KNBgYPQgs3bwqSIoqztQg/edit#gid=0">Classic WoW</a></li>
+		<li><a href="https://docs.google.com/spreadsheets/d/1WM1Z2fwhwr0rr2Pjpw6wk5KNBgYPQgs3bwqSIoqztQg/edit#gid=1976320296">Classic WoW</a></li>
 		<li><a href="https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/">RSS</a></li> 
-		<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Aq1J8HGXRJTmdG56QmtUQThMV1Bnc3RpRUg4M3VRQ0E&usp=drive_web#gid=0">PC</a></li>
-		
-		
+		<li><a href="https://www.gofundme.com/f/rettet-das-einhorn">Einhorn</a></li> 
+		<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Aq1J8HGXRJTmdG56QmtUQThMV1Bnc3RpRUg4M3VRQ0E&usp=drive_web#gid=0">PC</a></li>		
+		<li><a href="https://manganelo.com/chapter/if_youre_gonna_dress_up_do_it_like_this/chapter_26">漫画</a></li>	
+		<!-- sPLITWISE: https://secure.splitwise.com/#/friends/5348592 -->
 	</ul>
+
+	
 
 	<div id="news">
 		<!--div id="blur-container">
@@ -39,54 +41,55 @@
 			</ul>
 		</div-->
 
-		<div id="blur-container">
-			<div id="blur-bg"></div>
+		
 			<ul id="reddit" class="newspage">
 				<li>										
-					de
+					DE
 					<ul id="de"></ul>
-					worldnews
+					World News
 					<ul id="worldnews"></ul>
-
-					Virtual Reality
-					<ul id="virtualreality"></ul>
-					Index
-					<ul id="valveindex"></ul>
-					Oculus
-					<ul id="oculus"></ul>
-
+					Steam Deck
+					<ul id="steamdeck"></ul>
 					WoW
 					<ul id="classicwow"></ul>
-					Evolve
-					<ul id="evolveidle"></ul>
-					
+					Virtual Reality
+					<ul id="virtualreality"></ul>										
 					PCGaming
 					<ul id="pcgaming"></ul>	
 					Hardware
 					<ul id="hardware"></ul>					
 				</li>
 			</ul>
-		</div>
+		
 	</div>
 
-	<div id="spielgrube"> <img src="images/earth.jpg"></div>
-	<div id="spielgrube"> <img src="images/earth.jpg"></div>
+	<div id="notes-container">
+		<textarea id="notes"></textarea>
+	</div>
+
+	<!--
+		notes currently using https://simplemde.com/ but not compiling
+		can showdown do this better? https://github.com/showdownjs/showdown
+	-->
 	
 	<img id="mascot" src="images/miku.gif">
 
 </body>
 </html>
+
+
 <script src="jquery-2.1.1.js"></script>
 <script src="reddit.min.js"></script>
 <script src="script.js"></script>
 <script type="text/javascript" src="http://api.ihackernews.com/page?format=jsonp&callback=yourFunction"></script>
+
+
 <!--
 todo:
 RSS: https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/
 calendar
 notes: https://ourcodeworld.com/articles/read/359/top-7-best-markdown-editors-javascript-and-jquery-plugins
 more links
-integrate google music
 aix weather
 when certain keywords("reddit", "pcmr") are typed in, redirect instead of searching; if web address, just follow it; there must be a better way to imitate autocomplete.(log each URL input?)
 integrate all drive docs
@@ -103,5 +106,5 @@ mark all as read function
 Pin(Monitor) / Hide
 strike through hiddn items at first, to make undo easier?e
 Twitter feed?
-periodically poll for updates autopmatically and show in tab bar? May be too distracting...
+periodically poll for updates automatically and show in tab bar? May be too distracting...
 sync local storage?: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync

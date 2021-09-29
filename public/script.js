@@ -124,7 +124,7 @@ if (!hiddenOculus) {
 // Reddit page
 
 // generalized reddit function
-function addSubreddit(subName) {
+function addSubreddit(subName, limit) {
     var hiddenItems = [];
     if (window.localStorage) {
         //window.localStorage.clear();
@@ -135,8 +135,7 @@ function addSubreddit(subName) {
       hiddenItems = [];
     }
     
-    // different limits for each subreddit might be useful. Additional function parameter?
-    reddit.hot(subName).limit(20).fetch(function (res) {
+    reddit.hot(subName).limit(limit).fetch(function (res) {
         // res contains JSON parsed response from Reddit    
         var posts = res.data.children;
 
@@ -151,7 +150,7 @@ function addSubreddit(subName) {
 
         }
         // Hide item on click event
-        $("span").click(function() {
+        $("span.remove_news").click(function() {
             hiddenItems.push($(this).parent().attr("id"));
             window.localStorage.setItem(subName, JSON.stringify(hiddenItems));
             $(this).parent().slideUp();
@@ -162,18 +161,19 @@ function addSubreddit(subName) {
 
 
 
-addSubreddit("de");
-addSubreddit("worldnews");
+addSubreddit("de", 20);
+addSubreddit("worldnews", 20);
 
-addSubreddit("virtualreality");
-addSubreddit("valveindex");
-addSubreddit("oculus");
+addSubreddit("steamdeck", 20);
 
-addSubreddit("classicwow");
-addSubreddit("evolveidle");
+addSubreddit("virtualreality", 10);
+addSubreddit("valveindex", 10);
+addSubreddit("oculus", 10);
 
-addSubreddit("pcgaming");
-addSubreddit("hardware");
+addSubreddit("classicwow", 20);
+
+addSubreddit("pcgaming", 10);
+addSubreddit("hardware", 10);
 
 
 function crop_title(title) {
@@ -185,9 +185,14 @@ function crop_title(title) {
     return title;
 }
 
-
-
-
+var simplemde = new SimpleMDE({
+    autosave: {
+		enabled: true,
+		uniqueId: "MyUniqueID",
+		delay: 1000,
+    },
+    spellChecker: false,
+});
 
 
   
